@@ -26,6 +26,9 @@ jobs:
 
       - name: Upload Factorio Mod Release
         run: make release
+        with:
+          factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
+          factorio_user: ${{ secrets.FACTORIO_USER }}
 
       # - name: Upload Factorio Mod
       #   run: make publish TAG=${{ env.TAG }}
