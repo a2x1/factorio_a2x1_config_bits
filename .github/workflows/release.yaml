@@ -18,20 +18,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Create Factorio Mod Package
-        uses: Roang-zero1/factorio-mod-package@master
+      - name: Set Github TAG env value
+        run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
+
+      - name: Create Github Release Archive
+        run: make build TAG=${{ env.TAG }}
+
+      # - name: Create Factorio Mod Package
+      #   uses: Roang-zero1/factorio-mod-package@master
 
       - name: Upload Factorio Mod
         uses: Roang-zero1/factorio-create-release-action@master
         with:
           factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
           factorio_user: ${{ secrets.FACTORIO_USER }}
-
-      - name: Set Github TAG env value
-        run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
-
-      - name: Create Github Release Archive
-        run: make build TAG=${{ env.TAG }}
 
       - name: Create Github Release Object
         id: actions_create_release
