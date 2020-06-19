@@ -42,7 +42,6 @@ jobs:
       #     factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
       #     factorio_user: ${{ secrets.FACTORIO_USER }}
 
-
       - name: Create Github Release Object
         id: actions_create_release
         uses: actions/create-release@v1

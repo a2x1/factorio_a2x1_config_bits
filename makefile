@@ -11,17 +11,20 @@ help:
 .DEFAULT_GOAL := help
 
 build:
+	mkdir -p $(NAME)_$(VERSION)
+	mkdir -p $(NAME)_$(VERSION)/$(NAME)
+
+	cp -r locale $(NAME)_$(VERSION)/$(NAME)
+	cp -r resources $(NAME)_$(VERSION)/$(NAME)
+	cp -r changelog.txt $(NAME)_$(VERSION)/$(NAME)
+	cp -r info.json $(NAME)_$(VERSION)/$(NAME)
+	cp -r LICENSE $(NAME)_$(VERSION)/$(NAME)
+	cp -r *.lua $(NAME)_$(VERSION)/$(NAME)
+
 	rm -rf $(NAME)_$(VERSION).zip || true
-	cd .. && zip -r $(NAME)/$(NAME)_$(VERSION).zip \
-		--exclude=./$(NAME)/*.zip \
-		--exclude=./$(NAME)/.git/* \
-		--exclude=./$(NAME)/.github/* \
-		--exclude=./$(NAME)/.scripts/* \
-		--exclude=./$(NAME)/.gitattributes \
-		--exclude=./$(NAME)/*.gitignore \
-		--exclude=./$(NAME)/makefile \
-		--exclude=./$(NAME)/cookiejar.txt \
-		./$(NAME)
+	cd $(NAME)_$(VERSION) && zip -r ../$(NAME)_$(VERSION).zip $(NAME)
+
+	rm -rf $(NAME)_$(VERSION)
 
 release:
 	@bash ./.scripts/release.sh
