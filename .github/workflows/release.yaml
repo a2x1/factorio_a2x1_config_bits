@@ -27,22 +27,22 @@ jobs:
       # - name: Create Factorio Mod Package
       #   uses: Roang-zero1/factorio-mod-package@master
 
-      - name: Upload Factorio Mod
-        uses: Roang-zero1/factorio-create-release-action@master
-        with:
-          factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
-          factorio_user: ${{ secrets.FACTORIO_USER }}
+      # - name: Upload Factorio Mod
+      #   uses: Roang-zero1/factorio-create-release-action@master
+      #   with:
+      #     factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
+      #     factorio_user: ${{ secrets.FACTORIO_USER }}
 
-      - name: Create Github Release Object
-        id: actions_create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release_name: ${{ env.TAG }}
-          tag_name: ${{ github.ref }}
-          # body: |
-          #   Body Placeholder
+      # - name: Create Github Release Object
+      #   id: actions_create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     release_name: ${{ env.TAG }}
+      #     tag_name: ${{ github.ref }}
+      #     # body: |
+      #     #   Body Placeholder
 
       - name: Upload Github Release Archive
         uses: actions/upload-release-asset@v1
@@ -50,6 +50,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
-          asset_name: a2x1_config_bits-${{ env.TAG }}.zip
-          asset_path: a2x1_config_bits-${{ env.TAG }}.zip
+          asset_name: dist/a2x1_config_bits-${{ env.TAG }}.zip
+          asset_path: dist/a2x1_config_bits-${{ env.TAG }}.zip
           asset_content_type: application/octet-stream
