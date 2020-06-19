@@ -1,0 +1,43 @@
+name: Push
+
+on: push
+
+jobs:
+  push:
+    name: Push job
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Start
+        run: echo Start
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set env TAG value
+        run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
+
+      - name: Run Make Build
+        run: make build TAG=${{ env.TAG }}
+
+      - name: Create Release Object
+        id: actions_create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ env.TAG }}
+          tag_name: ${{ github.ref }}
+          # body: |
+          #   Body Placeholder
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
+          asset_name: a2x1_config_bits-${{ env.TAG }}.zip
+          asset_path: a2x1_config_bits-${{ env.TAG }}.zip
+          asset_content_type: application/octet-stream
