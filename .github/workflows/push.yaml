@@ -12,11 +12,5 @@ jobs:
       - name: Start
         run: echo Push
 
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Setup luacheck
-        run: sudo apt-get install -y lua-check
-
-      - name: Run Make Build with TAG
-        run: make luacheck
+      # - name: Checkout code
+      #   uses: actions/checkout@v2

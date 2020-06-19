@@ -44,3 +44,12 @@ jobs:
           asset_name: a2x1_config_bits-${{ env.TAG }}.zip
           asset_path: a2x1_config_bits-${{ env.TAG }}.zip
           asset_content_type: application/octet-stream
+
+      - name: Create Factorio mod package
+        uses: Roang-zero1/factorio-mod-package@master
+
+      - name: Factorio release
+        uses: Roang-zero1/factorio-create-release-action@master
+        with:
+          factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
+          factorio_user: ${{ secrets.FACTORIO_USER }}
