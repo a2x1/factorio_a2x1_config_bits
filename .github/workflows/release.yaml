@@ -1,48 +1,46 @@
-# name: Release
+name: Release
 
-# on:
-#   push:
-#     tags:
-#       - "*"
+on:
+  push:
+    tags:
+      - "*"
 
-# jobs:
-#   release:
-#     name: Release job
+jobs:
+  release:
+    name: Release job
 
-#     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-#     steps:
-#       - name: Set up Go 1.14
-#         uses: actions/setup-go@v1
-#         with:
-#           go-version: 1.14
+    steps:
+      - name: Start
+        run: echo Release
 
-#       - name: Check out code
-#         uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-#       - name: Set env TAG value
-#         run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
+      - name: Set env TAG value
+        run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
 
-#       - name: Run Make Build
-#         run: make build TAG=${{ env.TAG }}
+      - name: Run Make Build with TAG
+        run: make build TAG=${{ env.TAG }}
 
-#       - name: Create Release Object
-#         id: actions_create_release
-#         uses: actions/create-release@v1
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         with:
-#           release_name: ${{ env.TAG }}
-#           tag_name: ${{ github.ref }}
-#           # body: |
-#           #   Body Placeholder
+      - name: Create Release Object
+        id: actions_create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ env.TAG }}
+          tag_name: ${{ github.ref }}
+          # body: |
+          #   Body Placeholder
 
-#       - name: Upload Release Asset
-#         uses: actions/upload-release-asset@v1
-#         env:
-#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#         with:
-#           upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
-#           asset_content_type: application/octet-stream
-#           asset_path: ./kubectl-x-${{ env.TAG }}-linux-amd64.tar.gz
-#           asset_name: kubectl-x-${{ env.TAG }}-linux-amd64.tar.gz
+      - name: Upload Github Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
+          asset_name: a2x1_config_bits-${{ env.TAG }}.zip
+          asset_path: a2x1_config_bits-${{ env.TAG }}.zip
+          asset_content_type: application/octet-stream

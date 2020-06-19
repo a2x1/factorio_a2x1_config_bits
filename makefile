@@ -14,3 +14,7 @@ help:
 
 build:
 	zip -r $(NAME)-$(TAG).zip . --exclude=./*.zip --exclude=./.git/* --exclude=./.github/* --exclude=./makefile --exclude=./*.gitignore --exclude=./.gitattributes
+
+luacheck:
+	curl -s -o .luacheckrc https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/master/.luacheckrc
+	luacheck .
