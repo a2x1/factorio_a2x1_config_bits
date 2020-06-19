@@ -1,12 +1,12 @@
 {
   "name": "a2x1_config_bits",
-  "version": "0.0.3",
+  "version": "0.18.1",
   "factorio_version": "0.18",
   "title": "A2x1 Config Bits",
   "author": "Inguss",
   "contact": "Inguss.Neilands@gmail.com",
   "homepage": "",
-  "description": "a2x1 Factorio Config Bits",
+  "description": "Provides Several Quality of Life  improvements: Configurable always day, Player inventory space, movement/walking/running speed, mining speed, Laboratory research speed, furnace, mining-drill and assembling-machine base_productivity, Electricity pole range.",
   "dependencies": [
     "base >= 0.18.0"
   ]

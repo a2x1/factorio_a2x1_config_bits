@@ -18,13 +18,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set env TAG value
+      - name: Create Factorio Mod Package
+        uses: Roang-zero1/factorio-mod-package@master
+
+      - name: Upload Factorio Mod
+        uses: Roang-zero1/factorio-create-release-action@master
+        with:
+          factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
+          factorio_user: ${{ secrets.FACTORIO_USER }}
+
+      - name: Set Github TAG env value
         run: echo ::set-env name=TAG::${GITHUB_REF/refs\/tags\//}
 
-      - name: Run Make Build with TAG
+      - name: Create Github Release Archive
         run: make build TAG=${{ env.TAG }}
 
-      - name: Create Release Object
+      - name: Create Github Release Object
         id: actions_create_release
         uses: actions/create-release@v1
         env:
@@ -35,7 +44,7 @@ jobs:
           # body: |
           #   Body Placeholder
 
-      - name: Upload Github Release Asset
+      - name: Upload Github Release Archive
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -44,12 +53,3 @@ jobs:
           asset_name: a2x1_config_bits-${{ env.TAG }}.zip
           asset_path: a2x1_config_bits-${{ env.TAG }}.zip
           asset_content_type: application/octet-stream
-
-      - name: Create Factorio mod package
-        uses: Roang-zero1/factorio-mod-package@master
-
-      - name: Factorio release
-        uses: Roang-zero1/factorio-create-release-action@master
-        with:
-          factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
-          factorio_user: ${{ secrets.FACTORIO_USER }}

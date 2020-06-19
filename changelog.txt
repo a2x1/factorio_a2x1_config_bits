@@ -1,0 +1,14 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.18.1
+Date: 2020.06.19
+  Info:
+    - Initial MOD Release, contains several small configuration tweaks combined in single package
+  Features:
+    - Added configuration for game surfaces always_day
+    - Added configuration for data electric_pole supply_area_distance and maximum_wire_distance
+    - Added configuration for data furnace, mining-drill and assembling-machine base_productivity
+    - Added configuration for player character_build_distance_bonus, character_reach_distance_bonus, character_item_drop_distance_bonus, character_item_pickup_distance_bonus, character_loot_pickup_distance_bonus and character_resource_reach_distance_bonus
+    - Added configuration for player character_inventory_slots_bonus
+    - Added configuration for player laboratory_speed_modifier
+    - Added configuration for player character_running_speed_modifier, manual_mining_speed_modifier
+    - Added configuration for player manual_crafting_speed_modifier and ability to disable input_action.craft
