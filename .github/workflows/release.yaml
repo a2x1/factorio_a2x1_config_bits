@@ -24,9 +24,6 @@ jobs:
       - name: Create Github Release Archive
         run: make build TAG=${{ env.TAG }}
 
-      # - name: Create Factorio Mod Package
-      #   uses: Roang-zero1/factorio-mod-package@master
-
       - name: Upload Factorio Mod
         uses: Roang-zero1/factorio-create-release-action@master
         with:
