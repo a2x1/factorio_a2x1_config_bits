@@ -6,7 +6,7 @@ VERSION = $(shell jq .version info.json -r)
 help:
 	@echo "Available Commands"
 	@echo "\tmake build"
-	@echo "\tmake publish"
+	@echo "\tmake release"
 
 .DEFAULT_GOAL := help
 

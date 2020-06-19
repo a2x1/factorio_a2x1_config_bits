@@ -18,6 +18,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Update Environment
+        run: sudo apt-get update && sudo apt-get -y install curl zip jq
+
       - name: Set env name VERSION value
         run: echo ::set-env name=VERSION::$(jq .version info.json -r)
 
