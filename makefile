@@ -13,4 +13,4 @@ help:
 .DEFAULT_GOAL := help
 
 build:
-	zip -r dist/$(NAME)-$(TAG).zip . --exclude=./*.zip --exclude=./.git/* --exclude=./.github/* --exclude=./makefile --exclude=./*.gitignore --exclude=./.gitattributes
+	zip -r dist/$(NAME)-$(TAG).zip . --exclude=./*.zip --exclude=./.git/* --exclude=./.github/* --exclude=./dist/* --exclude=./makefile --exclude=./*.gitignore --exclude=./.gitattributes
