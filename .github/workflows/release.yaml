@@ -50,6 +50,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
-          asset_name: dist/a2x1_config_bits-${{ env.TAG }}.zip
-          asset_path: dist/a2x1_config_bits-${{ env.TAG }}.zip
+          asset_name: dist/a2x1_config_bits_${{ env.TAG }}.zip
+          asset_path: dist/a2x1_config_bits_${{ env.TAG }}.zip
           asset_content_type: application/octet-stream
