@@ -1,7 +1,11 @@
 #!/bin/bash
 
+
 NAME=`jq .name info.json -r`
 VERSION=`jq .version info.json -r`
+
+echo ${NAME}_${VERSION}.zip
+echo ${FACTORIO_USER}
 
 CSRF=$(curl -b cookiejar.txt -c cookiejar.txt -s https://mods.factorio.com/login | grep csrf_token | sed -r -e 's/.*value="(.*)".*/\1/')
 
