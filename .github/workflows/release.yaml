@@ -21,20 +21,11 @@ jobs:
       - name: Set env name VERSION value
         run: echo ::set-env name=VERSION::$(jq .version info.json -r)
 
-      - name: Create Github Release Object
-        id: actions_create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          release_name: ${{ env.VERSION }}
-          tag_name: ${{ env.VERSION }}
-          # body: |
-          #   Body Placeholder
+      - name: Create Factorio Mod Archive
+        run: make build
 
-
-      # - name: Create Release Archive
-      #   run: make build
+      - name: Upload Factorio Mod Release
+        run: make release
 
       # - name: Upload Factorio Mod
       #   run: make publish TAG=${{ env.TAG }}
@@ -51,12 +42,24 @@ jobs:
       #     factorio_password: ${{ secrets.FACTORIO_PASSWORD }}
       #     factorio_user: ${{ secrets.FACTORIO_USER }}
 
-      # - name: Upload Github Release Archive
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
-      #     asset_name: dist/a2x1_config_bits_${{ env.TAG }}.zip
-      #     asset_path: dist/a2x1_config_bits_${{ env.TAG }}.zip
-      #     asset_content_type: application/octet-stream
+
+      - name: Create Github Release Object
+        id: actions_create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ env.VERSION }}
+          tag_name: ${{ env.VERSION }}
+          # body: |
+          #   Body Placeholder
+
+      - name: Upload Github Release Archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
+          asset_name: dist/a2x1_config_bits_${{ env.TAG }}.zip
+          asset_path: dist/a2x1_config_bits_${{ env.TAG }}.zip
+          asset_content_type: application/octet-stream
