@@ -1,12 +1,12 @@
 {
   "name": "a2x1_config_bits",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "factorio_version": "0.18",
   "title": "A2x1 Config Bits",
   "author": "Inguss",
   "contact": "Inguss.Neilands@gmail.com",
   "homepage": "",
-  "description": "Factorio Config Bits",
+  "description": "a2x1 Factorio Config Bits",
   "dependencies": [
     "base >= 0.18.0"
   ]
