@@ -6,7 +6,7 @@
   "author": "Inguss",
   "contact": "Inguss.Neilands@gmail.com",
   "homepage": "",
-  "description": "Provides Several Quality of Life improvements\n Configurable: Game Map Always day, Player inventory space, movement/walking/running speed and mining speed, Ability to disable and boost Player Hand Crafting speed, Electricity pole range, Laboratory research speed, Furnace, mining-drill and assembling-machine Base Productivity",
+  "description": "Provides Several Quality of Life improvements. Configurables: Game Map Always day, Player inventory space, movement/walking/running speed and mining speed, Ability to Disable Player Hand Crafting speed for Lazy Bastard Achievement, Electricity pole range, Laboratory research speed, Furnace, mining-drill and assembling-machine Base Productivity and Crafting speed",
   "dependencies": [
     "base >= 0.18.0"
   ]

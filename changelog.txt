@@ -1,8 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.4
 Date: 2020.06.20
+  Info:
+    - Normalized Variable Names and Descriptions, you might need to change settings and update your savegames
+    - Normalized Default values
   Bugfixes:
     - Added a missing precentage calculation to Player Mining Speed
+  Features:
+    - Added configuration for data furnace, mining-drill and assembling-machine crafting_speed
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.3
 Date: 2020.06.20
