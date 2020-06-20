@@ -23,24 +23,3 @@ script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
     setting_changed_player_character_bonus(event)
     setting_changed_game_surfaces_always_day(event)
 end)
-
--- function on_player_created(player)
---     player.print("A2x1 Config Bits Loaded")
-
---     -- player.insert {
---     --     name = "small-electric-pole",
---     --     count = 1
---     -- }
---     -- player.insert {
---     --     name = "medium-electric-pole",
---     --     count = 1
---     -- }
---     -- player.insert {
---     --     name = "big-electric-pole",
---     --     count = 1
---     -- }
---     -- player.insert {
---     --     name = "substation",
---     --     count = 1
---     -- }
--- end

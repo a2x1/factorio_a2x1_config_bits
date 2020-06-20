@@ -3,6 +3,7 @@ Version: 0.18.3
 Date: 2020.06.20
   Info:
     - Testing Github Actions based Release build system
+    - Few minor non functional tweaks
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.2
 Date: 2020.06.19
