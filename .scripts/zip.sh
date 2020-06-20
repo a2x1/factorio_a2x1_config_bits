@@ -13,10 +13,11 @@ mkdir -p ${TMP_DIR}/${NAME}
 
 cp -r locale ${TMP_DIR}/${NAME}
 cp -r resources ${TMP_DIR}/${NAME}
-cp -r changelog.txt ${TMP_DIR}/${NAME}
-cp -r info.json ${TMP_DIR}/${NAME}
 cp -r LICENSE ${TMP_DIR}/${NAME}
+cp -r *.json ${TMP_DIR}/${NAME}
 cp -r *.lua ${TMP_DIR}/${NAME}
+cp -r *.txt ${TMP_DIR}/${NAME}
+cp -r *.md ${TMP_DIR}/${NAME}
 
 rm -rf ${RELEASE_FILE_ZIP} || true
 
