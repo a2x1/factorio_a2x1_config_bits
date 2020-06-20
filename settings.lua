@@ -47,6 +47,13 @@ data:extend({
         default_value = 0,
         minimum_value = 0
     },
+    {
+        type = "int-setting",
+        name = "a2x1-config-bits-player_force_crafting_speed_modifier",
+        setting_type = "runtime-global",
+        default_value = 0,
+        minimum_value = 0
+    },
     -- player_character_bonus
     {
         type = "int-setting",
@@ -69,21 +76,21 @@ data:extend({
         type = "int-setting",
         name = "a2x1-config-bits-data_item_base_productivity_furnace",
         setting_type = "startup",
-        default_value = 100,
+        default_value = 0,
         minimum_value = 0
     },
     {
         type = "int-setting",
         name = "a2x1-config-bits-data_item_base_productivity_mining_drill",
         setting_type = "startup",
-        default_value = 100,
+        default_value = 0,
         minimum_value = 0
     },
     {
         type = "int-setting",
         name = "a2x1-config-bits-data_item_base_productivity_assembling_machine",
         setting_type = "startup",
-        default_value = 100,
+        default_value = 0,
         minimum_value = 0
     },
     -- data_item_supply_distance_electric_pole

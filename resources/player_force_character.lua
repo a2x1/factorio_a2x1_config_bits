@@ -20,7 +20,7 @@ function setting_changed_player_force_character(event)
         for _, player in pairs(game.players) do
             if player.character then
                 local settings_value = settings.global[settings_key_prefix .. "player_force_character_mining_speed_modifier"].value
-                player.force.manual_mining_speed_modifier = settings_value
+                player.force.manual_mining_speed_modifier = settings_value / 100
             end
         end
     end
