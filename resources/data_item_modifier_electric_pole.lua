@@ -18,7 +18,7 @@
 -- Max value is 64.
 --
 --
-local settings_key = "a2x1-config-bits-data_item_supply_distance_electric_pole"
+local settings_key = "a2x1-config-bits-data_item_modifier_electric_pole"
 
 local settings_value = settings.startup[settings_key]["value"]
 
@@ -27,11 +27,11 @@ if settings_value == "disabled" then
 end
 
 for k, v in pairs(data.raw["electric-pole"]) do
-    v.supply_area_distance = v.maximum_wire_distance * settings_value
+    v.supply_area_distance = v.maximum_wire_distance * settings_value / 100
 
     if v.supply_area_distance * 2 > 64 then
         v.maximum_wire_distance = 64
     else
-        v.maximum_wire_distance = v.supply_area_distance * 2
+        v.maximum_wire_distance = 2 * v.supply_area_distance
     end
 end

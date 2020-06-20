@@ -1,4 +1,4 @@
-local settings_key = "a2x1-config-bits-player_force_character_crafting_speed_modifier"
+local settings_key = "a2x1-config-bits-player_force-character_crafting_speed_modifier"
 
 function on_player_created_player_force_character_crafting(event)
 
