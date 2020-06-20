@@ -1,8 +1,8 @@
-name: FeatureBranch
+name: MasterBranch
 
 on:
   push:
-    branches-ignore:
+    branches:
       - master
 
 jobs:
@@ -34,23 +34,23 @@ jobs:
       - name: Create Factorio Mod ZIP Archive
         run: make zip
 
-      # - name: Create Github Release Object
-      #   id: actions_create_release
-      #   uses: actions/create-release@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     release_name: ${{ env.VERSION }}
-      #     tag_name: ${{ env.VERSION }}
-      #     # body: |
-      #     #   Body Placeholder
+      - name: Create Github Release Object
+        id: actions_create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_name: ${{ env.VERSION }}
+          tag_name: ${{ env.VERSION }}
+          # body: |
+          #   Body Placeholder
 
-      # - name: Upload Github Release Archive
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
-      #     asset_name: ${{ env.NAME }}_${{ env.VERSION }}.zip
-      #     asset_path: ${{ env.NAME }}_${{ env.VERSION }}.zip
-      #     asset_content_type: application/octet-stream
+      - name: Upload Github Release Archive
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.actions_create_release.outputs.upload_url }}
+          asset_name: ${{ env.NAME }}_${{ env.VERSION }}.zip
+          asset_path: ${{ env.NAME }}_${{ env.VERSION }}.zip
+          asset_content_type: application/octet-stream
