@@ -8,7 +8,7 @@ echo ""
 echo "Searching Release Version in mods.factorio.com"
 echo ""
 
-curl -s https://mods.factorio.com/api/mods/${NAME}/full | jq -e ".releases[] | select(.version == \"${VERSION}\")"
+curl -s https://mods.factorio.com/api/mods/${NAME}/full | jq -e ".releases[]? | select(.version == \"${VERSION}\")"
 STATUS_CODE=$?
 
 if [[ $STATUS_CODE -ne 4 ]]; then
