@@ -3,7 +3,7 @@ Version: 0.18.4
 Date: 2020.06.20
   Info:
     - Normalized Variable Names and Descriptions, you might need to change settings and update your savegames
-    - Normalized Default values
+    - Normalized Default values, updated corect description and summary
   Bugfixes:
     - Added a missing precentage calculation to Player Mining Speed
   Features:
