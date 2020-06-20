@@ -15,11 +15,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set ENV NAME value
+        run: echo ::set-env name=NAME::$(jq .name info.json -r)
+
+      - name: Set ENV VERSION value
+        run: echo ::set-env name=VERSION::$(jq .version info.json -r)
+
+      - name: Factorio Mod luacheck
+        uses: Roang-zero1/factorio-mod-luacheck@v1.1.0
+
       # - name: Update Environment
       #   run: sudo apt-get update && sudo apt-get -y install curl zip jq
-
-      # - name: Set env name VERSION value
-      #   run: echo ::set-env name=VERSION::$(jq .version info.json -r)
 
       # - name: Create Factorio Mod Archive
       #   run: make build
