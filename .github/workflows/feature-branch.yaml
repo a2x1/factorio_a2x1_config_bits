@@ -23,6 +23,8 @@ jobs:
 
       - name: Factorio Mod luacheck
         uses: Roang-zero1/factorio-mod-luacheck@v1.1.0
+        with:
+          luacheckrc_url: https://raw.githubusercontent.com/Nexela/Factorio-luacheckrc/master/.luacheckrc
 
       # - name: Update Environment
       #   run: sudo apt-get update && sudo apt-get -y install curl zip jq
