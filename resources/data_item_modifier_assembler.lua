@@ -9,13 +9,13 @@
 local settings_key_prefix = "a2x1_config_bits-data_item_modifier_assembler-"
 
 for k, v in pairs(data.raw["assembling-machine"]) do
-    local base_productivity = settings.startup[settings_key_prefix .. "base_productivity"]["value"]
+  local base_productivity = settings.startup[settings_key_prefix .. "base_productivity"]["value"]
 
-    v.base_productivity = base_productivity / 100
+  v.base_productivity = base_productivity / 100
 
-    local crafting_speed = settings.startup[settings_key_prefix .. "crafting_speed"]["value"]
+  local crafting_speed = settings.startup[settings_key_prefix .. "crafting_speed"]["value"]
 
-    if crafting_speed ~= nil then
-        v.crafting_speed = v.crafting_speed + v.crafting_speed * crafting_speed / 100
-    end
+  if crafting_speed ~= nil then
+    v.crafting_speed = v.crafting_speed + v.crafting_speed * crafting_speed / 100
+  end
 end
