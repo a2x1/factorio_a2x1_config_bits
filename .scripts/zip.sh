@@ -16,6 +16,7 @@ cp -r resources ${TMP_DIR}/${NAME}
 cp -r LICENSE ${TMP_DIR}/${NAME}
 cp -r *.json ${TMP_DIR}/${NAME}
 cp -r *.lua ${TMP_DIR}/${NAME}
+cp -r *.png ${TMP_DIR}/${NAME}
 cp -r *.txt ${TMP_DIR}/${NAME}
 cp -r *.md ${TMP_DIR}/${NAME}
 
