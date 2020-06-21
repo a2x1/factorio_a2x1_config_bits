@@ -18,7 +18,7 @@
 -- Max value is 64.
 --
 --
-local settings_key = "a2x1-config-bits-data_item_modifier_electric_pole"
+local settings_key = "a2x1_config_bits-data_item_modifier_electric_pole"
 
 local settings_value = settings.startup[settings_key]["value"]
 

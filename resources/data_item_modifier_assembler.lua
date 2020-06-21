@@ -6,7 +6,7 @@
 -- https://wiki.factorio.com/Prototype/CraftingMachine#crafting_speed
 --
 --
-local settings_key_prefix = "a2x1-config-bits-data_item_modifier_assembler-"
+local settings_key_prefix = "a2x1_config_bits-data_item_modifier_assembler-"
 
 for k, v in pairs(data.raw["assembling-machine"]) do
     local base_productivity = settings.startup[settings_key_prefix .. "base_productivity"]["value"]

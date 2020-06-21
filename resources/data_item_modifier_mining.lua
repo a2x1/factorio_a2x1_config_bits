@@ -6,7 +6,7 @@
 -- https://wiki.factorio.com/Prototype/MiningDrill#mining_speed
 --
 --
-local settings_key_prefix = "a2x1-config-bits-data_item_modifier_mining-"
+local settings_key_prefix = "a2x1_config_bits-data_item_modifier_mining-"
 
 for k, v in pairs(data.raw["mining-drill"]) do
     local base_productivity = settings.startup[settings_key_prefix .. "base_productivity"]["value"]

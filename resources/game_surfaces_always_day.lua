@@ -1,4 +1,4 @@
-local settings_key = "a2x1-config-bits-game_surfaces_always_day"
+local settings_key = "a2x1_config_bits-game_surfaces_always_day"
 
 function on_player_created_game_surfaces_always_day(event)
   setting_changed_game_surfaces_always_day(event)

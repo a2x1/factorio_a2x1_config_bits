@@ -1,4 +1,4 @@
-local settings_key_prefix = "a2x1-config-bits-player_force-"
+local settings_key_prefix = "a2x1_config_bits-player_force-"
 
 function on_player_created_player_force(event)
     event.setting = "on_player_created"
