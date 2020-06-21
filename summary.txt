@@ -1,4 +1,5 @@
 Quality of Life improvements
+
 Configurable Game Map Always day, Electricity pole supply range
 Player walking/running/crafting/mining speed and inventory space
 Ability to Disable Hand Crafting speed for Lazy Bastard Achievement
