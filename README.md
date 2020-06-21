@@ -8,6 +8,12 @@ Default value: Enabled
 
 When enabled, the sun will always shine
 
+## Game Map Zoom Level
+
+Default value: 0.1
+
+Set desired zoom level, Values smaller than 0.1 are not recommended
+
 ## Player Inventory Slots
 
 Default value: 40
@@ -90,3 +96,9 @@ Default Productivity value: 0 %
 Default Mining Speed value: 300 %
 
 Ability to configure Productivity and Mining Speed
+
+## Inserter Speed Boost
+
+Default Speed Boost value: 300 %
+
+Ability to configure Inserter Speed Boost
