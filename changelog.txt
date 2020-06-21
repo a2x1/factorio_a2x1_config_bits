@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.5
 Date: 2020.06.21
+  Info:
+    - Normalized variable names
+  Features:
+    - Added configuration for zooming without limits
+    - Added configuration for inserter extension and rotation speed
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.4
 Date: 2020.06.20

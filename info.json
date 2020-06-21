@@ -1,12 +1,10 @@
 {
   "name": "a2x1_config_bits",
-  "version": "0.18.5",
-  "factorio_version": "0.18",
   "title": "A2x1 Config Bits",
   "author": "Inguss",
   "contact": "Inguss.Neilands@gmail.com",
-  "homepage": "",
-  "description": "Provides Several Quality of Life improvements. Configurables: Game Map Always day, Player inventory space, movement/walking/running speed and mining speed, Ability to Disable Player Hand Crafting speed for Lazy Bastard Achievement, Electricity pole range, Laboratory research speed, Furnace, mining-drill and assembling-machine Base Productivity and Crafting speed",
+  "version": "0.18.5",
+  "factorio_version": "0.18",
   "dependencies": [
     "base >= 0.18.0"
   ]

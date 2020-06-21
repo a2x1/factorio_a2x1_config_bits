@@ -26,3 +26,11 @@ script.on_event(
     setting_changed_game_surfaces_always_day(event)
   end
 )
+
+script.on_event(
+  "a2x1_config_bits-data_custom_input_zoom",
+  function(event)
+    local player = game.players[event.player_index]
+    player.zoom = player.mod_settings["a2x1_config_bits-game_surfaces_zoom"].value
+  end
+)
