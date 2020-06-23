@@ -66,6 +66,18 @@ Default value: 1
 
 Enable faster research. 1 is normal speed, 2 is double speed 3 is triple etc.
 
+## Stack Inserters Capacity Bonus
+
+Default is 50
+
+Number of items that can be transferred by stack inserters
+
+## Non-Stack Inserters Stack Size Bonus
+
+Default is 25
+
+The inserter stack size bonus for non stack inserters
+
 ## Electric Pole Supply Area
 
 Default value: 100 %
@@ -99,6 +111,6 @@ Ability to configure Productivity and Mining Speed
 
 ## Inserter Speed Boost
 
-Default Speed Boost value: 300 %
+Default Speed Boost value: 0 %
 
 Ability to configure Inserter Speed Boost

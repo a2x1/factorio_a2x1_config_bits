@@ -34,4 +34,26 @@ function setting_changed_player_force(event)
       end
     end
   end
+
+  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "stack_inserter_capacity_bonus" then
+    for _, player in pairs(game.players) do
+      if player.character then
+        local stack_inserter_capacity_bonus = settings.global[settings_key_prefix .. "stack_inserter_capacity_bonus"].value
+        if stack_inserter_capacity_bonus ~= nil then
+          player.force.stack_inserter_capacity_bonus = stack_inserter_capacity_bonus
+        end
+      end
+    end
+  end
+
+  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "inserter_stack_size_bonus" then
+    for _, player in pairs(game.players) do
+      if player.character then
+        local inserter_stack_size_bonus = settings.global[settings_key_prefix .. "inserter_stack_size_bonus"].value
+        if inserter_stack_size_bonus ~= nil then
+          player.force.inserter_stack_size_bonus = inserter_stack_size_bonus
+        end
+      end
+    end
+  end
 end

@@ -1,6 +1,5 @@
-Quality of Life improvements
-
-Configurable Game Map Always day, Zoom, Electricity pole supply range
-Player walking/running/crafting/mining speed and inventory space
-Ability to Disable Hand Crafting speed for Lazy Bastard Achievement
-Assembler, Furnace, Mining productivity and crafting, Laboratory research
+Quality of Life improvements, Always day, Infinite Zoom
+Ability to Disable Hand Crafting for Lazy Bastard Achievement
+Player Movement/Crafting/Mining speed, Long reach and Inventory space
+Inserter and Laboratory Research Speed, Electricity Supply Range
+Assembler, Furnace, Mining Productivity and Speed
