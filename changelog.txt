@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.7
-Date: 2020.06.21
+Date: 2020.06.23
   Info:
     - Reduced Inserter Speed Boost Default value to 0%
   Features:
