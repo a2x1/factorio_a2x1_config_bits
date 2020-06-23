@@ -62,11 +62,12 @@ data:extend(
     },
     -- player_force-inserter_stack_size_bonus
     {
-      type = "double-setting",
+      type = "int-setting",
       name = "a2x1_config_bits-player_force-stack_inserter_capacity_bonus",
       setting_type = "runtime-global",
       default_value = 50,
-      minimum_value = 0,
+      minimum_value = 1,
+      maximum_value = 254,
       order = 261
     },
     {
@@ -74,7 +75,8 @@ data:extend(
       name = "a2x1_config_bits-player_force-inserter_stack_size_bonus",
       setting_type = "runtime-global",
       default_value = 25,
-      minimum_value = 0,
+      minimum_value = 1,
+      maximum_value = 254,
       order = 262
     },
     -- player_character_bonus
@@ -153,7 +155,7 @@ data:extend(
       name = "a2x1_config_bits-data_item_modifier_inserter-speed",
       setting_type = "startup",
       default_value = 0,
-      minimum_value = 1,
+      minimum_value = 0,
       order = 141
     },
     -- data_item_modifier_electric_pole

@@ -66,13 +66,13 @@ Default value: 1
 
 Enable faster research. 1 is normal speed, 2 is double speed 3 is triple etc.
 
-## Stack Inserters Capacity Bonus
+## Inserters Stack Capacity Bonus
 
 Default is 50
 
 Number of items that can be transferred by stack inserters
 
-## Non-Stack Inserters Stack Size Bonus
+## Inserters Non-Stack Stack Size Bonus
 
 Default is 25
 
