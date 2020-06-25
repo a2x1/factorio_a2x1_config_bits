@@ -56,7 +56,7 @@ data:extend(
       type = "double-setting",
       name = "a2x1_config_bits-player_force-laboratory_speed_modifier",
       setting_type = "runtime-global",
-      default_value = 10,
+      default_value = 100,
       minimum_value = 1,
       order = 251
     },
@@ -65,7 +65,7 @@ data:extend(
       type = "int-setting",
       name = "a2x1_config_bits-player_force-stack_inserter_capacity_bonus",
       setting_type = "runtime-global",
-      default_value = 50,
+      default_value = 100,
       minimum_value = 1,
       maximum_value = 254,
       order = 261
@@ -111,7 +111,7 @@ data:extend(
       type = "double-setting",
       name = "a2x1_config_bits-data_item_modifier_assembler-crafting_speed",
       setting_type = "startup",
-      default_value = 300,
+      default_value = 700,
       minimum_value = 0,
       order = 112
     },

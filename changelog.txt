@@ -1,11 +1,13 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.7
-Date: 2020.06.23
+Date: 2020.06.25
   Info:
     - Reduced Inserter Speed Boost Default value to 0%
+    - Increased default Assembler Speed to 700%
+    - Increased default Lab Speed to 100%
   Features:
-    - Added configuration Inserters Non-Stack Stack Size Bonus
-    - Added configuration Inserters Stack Capacity Bonus
+    - Added configuration Inserters Non-Stack Stack Size Bonus with default 25
+    - Added configuration Inserters Stack Capacity Bonus with default 100
 ---------------------------------------------------------------------------------------------------
 Version: 0.18.6
 Date: 2020.06.21

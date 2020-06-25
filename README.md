@@ -62,13 +62,13 @@ When disabled, provides the following items when creating new map
 
 ## Laboratory research speed
 
-Default value: 1
+Default value: 100
 
 Enable faster research. 1 is normal speed, 2 is double speed 3 is triple etc.
 
 ## Inserters Stack Capacity Bonus
 
-Default is 50
+Default is: 100
 
 Number of items that can be transferred by stack inserters
 
@@ -84,14 +84,14 @@ Default value: 100 %
 
 Updates supply area for electric poles match their wire reach.
 
-Ability to extend reach to 150% or 200%
+Ability to extend reach to 100%, 150% or 200%
 
 Note: maximum_wire_distance cant be higher than 64
 
 ## Assembler Productivity and Crafting Speed
 
 Default Productivity value: 0 %
-Default Crafting Speed value: 300 %
+Default Crafting Speed value: 700 %
 
 Ability to configure Productivity and Crafting Speed
 
