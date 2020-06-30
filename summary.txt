@@ -1,5 +1,5 @@
-Quality of Life improvements, Always day, Infinite Zoom
-Ability to Disable Hand Crafting for Lazy Bastard Achievement
-Player Movement/Crafting/Mining speed, Long reach and Inventory space
-Laboratory Research and Inserter Speed, Electricity Supply Range
-Assembler, Furnace, Mining Productivity and Speed
+Quality of Life improvements - Always day, Infinite Zoom, Support for for Lazy Bastard Achievement,
+Manual Crafting Speed Boost, Running and Mining Speed, Reach Distance,
+Electric Pole Coverage - Supply Area and Wire distance,
+Container Inventory Size, Inserter Speed, Lab Research Speed and Productivity,
+Furnace, Mining Drill, Assembling Machine Crafting Speed and Productivity

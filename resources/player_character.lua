@@ -11,7 +11,7 @@ function __settings_global__player_character(data, order)
         maximum_value = 9999,
         minimum_value = 0,
         localised_name = "Player Reach Distance",
-        localised_description = "Player Build, Reach, Item drop, etc. Distance, Default 9999 - or Less",
+        localised_description = "Player Build, Reach, Item drop, etc. Distance",
         order = tonumber(order .. "1")
       },
       {
@@ -21,8 +21,8 @@ function __settings_global__player_character(data, order)
         default_value = 40,
         minimum_value = 0,
         localised_name = "Player Extra Inventory Slots",
-        localised_description = "Player Extra Inventory Slots, Default 40",
-        order = tonumber(order .. "1")
+        localised_description = "Player Extra Inventory Slots\nDefault 40",
+        order = tonumber(order .. "2")
       }
     }
   )

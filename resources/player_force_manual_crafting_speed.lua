@@ -16,7 +16,7 @@ function __settings_global__player_force_manual_crafting_speed(data, order)
           "1000x"
         },
         localised_name = "Player Manual Crafting",
-        localised_description = "Disable Manual Crafting for Lazy Bastard Achievement\n Manual Crafting Enabled with 1x, 10x, 100x, 1000x Multiplier",
+        localised_description = "Lazy Bastard Achievement = Disabled\nManual Crafting Multiplier 1x, 10x, 100x, 1000x",
         order = tonumber(order .. "1")
       }
     }

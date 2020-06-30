@@ -9,7 +9,7 @@ function __settings__user__game_players_zoom(data, order)
         setting_type = "runtime-per-user",
         default_value = 0.1,
         localised_name = "Infinite Zoom Distance",
-        localised_description = "Less is more - 0.1 Default - 0.2 Less",
+        localised_description = "Less is more",
         order = tonumber(order .. "1")
       }
     }
