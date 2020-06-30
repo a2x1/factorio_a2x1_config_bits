@@ -1,36 +1,32 @@
-require "resources/player_force"
-require "resources/player_force-character_crafting"
-require "resources/player_character"
+require "resources/game_players_zoom"
 require "resources/game_surfaces_always_day"
+
+require "resources/player_character"
+require "resources/player_force"
+require "resources/player_force_manual_crafting_speed"
+
+__script__game_players_zoom(script)
 
 script.on_event(
   defines.events.on_player_created,
   function(event)
-    -- game.players[1].print("script.on_event defines.events.on_player_created")
+    --
 
-    on_player_created_player_force(event)
-    on_player_created_player_force_character_crafting(event)
-    on_player_created_player_character(event)
-    on_player_created_game_surfaces_always_day(event)
+    __on_player_created__game_surfaces_always_day(event)
+    __on_player_created__player_force_manual_crafting_speed(event)
+    __on_player_created__player_force(event)
+    __on_player_created__player_character(event)
   end
 )
 
 script.on_event(
   defines.events.on_runtime_mod_setting_changed,
   function(event)
-    -- game.players[1].print("script.on_event defines.events.on_runtime_mod_setting_changed")
+    --
 
-    setting_changed_player_force(event)
-    setting_changed_player_force_character_crafting(event)
-    setting_changed_player_character(event)
-    setting_changed_game_surfaces_always_day(event)
-  end
-)
-
-script.on_event(
-  "a2x1_config_bits-data_custom_input_zoom",
-  function(event)
-    local player = game.players[event.player_index]
-    player.zoom = player.mod_settings["a2x1_config_bits-game_surfaces_zoom"].value
+    __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
+    __on_runtime_mod_setting_changed__player_force_manual_crafting_speed(event)
+    __on_runtime_mod_setting_changed__player_force(event)
+    __on_runtime_mod_setting_changed__player_character(event)
   end
 )

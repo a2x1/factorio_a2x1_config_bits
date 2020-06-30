@@ -1,59 +1,52 @@
-local settings_key_prefix = "a2x1_config_bits-player_force-"
+local settings_key_prefix = "a2x1_config_bits" .. "-" .. "player_force" .. "-"
 
-function on_player_created_player_force(event)
-  event.setting = "on_player_created"
-  setting_changed_player_force(event)
+function __settings_global__player_force(data, order)
+  return data:extend(
+    {
+      {
+        type = "double-setting",
+        name = settings_key_prefix .. "character_running_speed_modifier",
+        setting_type = "runtime-global",
+        default_value = 1,
+        minimum_value = 0,
+        localised_name = "Player Running Speed Modifier",
+        localised_description = "-1 Slower - 0 Normal - 1 Faster",
+        order = tonumber(order .. "1")
+      },
+      {
+        type = "double-setting",
+        name = settings_key_prefix .. "manual_mining_speed_modifier",
+        setting_type = "runtime-global",
+        default_value = 1,
+        minimum_value = 0,
+        localised_name = "Player Mining Speed Modifier",
+        localised_description = "-1 Slower - 0 Normal - 1 Faster",
+        order = tonumber(order .. "1")
+      }
+    }
+  )
 end
 
-function setting_changed_player_force(event)
-  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "character_running_speed_modifier" then
-    for _, player in pairs(game.players) do
-      if player.character then
-        local settings_value = settings.global[settings_key_prefix .. "character_running_speed_modifier"].value
-        player.force.character_running_speed_modifier = settings_value / 100
-      end
-    end
-  end
+function __on_player_created__player_force(event)
+  --
 
-  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "character_mining_speed_modifier" then
-    for _, player in pairs(game.players) do
-      if player.character then
-        local settings_value = settings.global[settings_key_prefix .. "character_mining_speed_modifier"].value
-        player.force.manual_mining_speed_modifier = settings_value / 100
-      end
-    end
-  end
+  __on_runtime_mod_setting_changed__player_force(event)
+end
 
-  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "laboratory_speed_modifier" then
-    for _, player in pairs(game.players) do
-      if player.character then
-        local laboratory_speed_modifier = settings.global[settings_key_prefix .. "laboratory_speed_modifier"].value
-        if laboratory_speed_modifier ~= nil then
-          player.force.laboratory_speed_modifier = laboratory_speed_modifier
-        end
-      end
-    end
-  end
+function __on_runtime_mod_setting_changed__player_force(event)
+  --
 
-  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "stack_inserter_capacity_bonus" then
-    for _, player in pairs(game.players) do
-      if player.character then
-        local stack_inserter_capacity_bonus = settings.global[settings_key_prefix .. "stack_inserter_capacity_bonus"].value
-        if stack_inserter_capacity_bonus ~= nil then
-          player.force.stack_inserter_capacity_bonus = stack_inserter_capacity_bonus
-        end
-      end
-    end
-  end
+  for _, player in pairs(game.players) do
+    if player.character then
+      --
 
-  if event.setting == "on_player_created" or event.setting == settings_key_prefix .. "inserter_stack_size_bonus" then
-    for _, player in pairs(game.players) do
-      if player.character then
-        local inserter_stack_size_bonus = settings.global[settings_key_prefix .. "inserter_stack_size_bonus"].value
-        if inserter_stack_size_bonus ~= nil then
-          player.force.inserter_stack_size_bonus = inserter_stack_size_bonus
-        end
-      end
+      -- character_running_speed_modifier
+      player.force.character_running_speed_modifier = settings.global[settings_key_prefix .. "character_running_speed_modifier"].value
+
+      -- manual_mining_speed_modifier
+      player.force.manual_mining_speed_modifier = settings.global[settings_key_prefix .. "manual_mining_speed_modifier"].value
+
+    --
     end
   end
 end

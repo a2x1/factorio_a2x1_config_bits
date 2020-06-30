@@ -1,5 +1,5 @@
 Quality of Life improvements, Always day, Infinite Zoom
 Ability to Disable Hand Crafting for Lazy Bastard Achievement
 Player Movement/Crafting/Mining speed, Long reach and Inventory space
-Inserter and Laboratory Research Speed, Electricity Supply Range
+Laboratory Research and Inserter Speed, Electricity Supply Range
 Assembler, Furnace, Mining Productivity and Speed

@@ -1,30 +1,39 @@
-local settings_key = "a2x1_config_bits-game_surfaces_always_day"
+local settings_key_prefix = "a2x1_config_bits" .. "-" .. "game_surfaces_always_day" .. "-"
 
-function on_player_created_game_surfaces_always_day(event)
-  setting_changed_game_surfaces_always_day(event)
+function __settings_global__game_surfaces_always_day(data, order)
+  return data:extend(
+    {
+      {
+        type = "string-setting",
+        name = settings_key_prefix .. "mode",
+        setting_type = "runtime-global",
+        default_value = "enabled",
+        allowed_values = {
+          "enabled",
+          "disabled"
+        },
+        localised_name = "Always Day",
+        localised_description = "Enable Always Day - or Disable",
+        order = tonumber(order .. "1")
+      }
+    }
+  )
 end
 
-function setting_changed_game_surfaces_always_day(event)
-  player = game.players[event.player_index]
-  settings_value = settings.global[settings_key]["value"]
+function __on_player_created__game_surfaces_always_day(event)
+  --
 
-  if settings_value == "enabled" and game.surfaces[1].always_day == true then
-    return
-  end
+  __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
+end
 
-  if settings_value == "disabled" and game.surfaces[1].always_day == false then
-    return
-  end
+function __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
+  --
 
-  if settings_value == "enabled" then
-    game.surfaces[1].always_day = true
-    -- player.print("Changed: game.surfaces[1].always_day = true")
-    return
-  end
-
-  if settings_value == "disabled" then
+  if settings.global[settings_key_prefix .. "mode"].value == "disabled" then
     game.surfaces[1].always_day = false
-    -- player.print("Changed: game.surfaces[1].always_day = false")
-    return
+  end
+
+  if settings.global[settings_key_prefix .. "mode"].value == "enabled" then
+    game.surfaces[1].always_day = true
   end
 end
