@@ -16,6 +16,8 @@ script.on_event(
     __on_player_created__player_force_manual_crafting_speed(event)
     __on_player_created__player_force(event)
     __on_player_created__player_character(event)
+
+    --
   end
 )
 
@@ -28,5 +30,7 @@ script.on_event(
     __on_runtime_mod_setting_changed__player_force_manual_crafting_speed(event)
     __on_runtime_mod_setting_changed__player_force(event)
     __on_runtime_mod_setting_changed__player_character(event)
+
+    --
   end
 )

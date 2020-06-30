@@ -11,7 +11,6 @@ echo ""
 
 mkdir -p ${TMP_DIR}/${NAME}
 
-cp -r locale ${TMP_DIR}/${NAME}
 cp -r resources ${TMP_DIR}/${NAME}
 cp -r LICENSE ${TMP_DIR}/${NAME}
 cp -r *.json ${TMP_DIR}/${NAME}
