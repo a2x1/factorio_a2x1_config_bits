@@ -4,9 +4,27 @@ function __settings_startup__data_raw_inserter(data, order)
   return data:extend(
     {
       {
+        type = "int-setting",
+        name = settings_key_prefix .. "inserter_speed",
+        setting_type = "startup",
+        default_value = 100,
+        maximum_value = 100000,
+        minimum_value = 1,
+        localised_name = "Inserter Rotation Speed",
+        localised_description = "1% Slower - 100% Normal - 100000% Faster",
+        order = tonumber(order .. "3")
+      }
+    }
+  )
+end
+
+function __settings_global__data_raw_inserter(data, order)
+  return data:extend(
+    {
+      {
         type = "double-setting",
         name = settings_key_prefix .. "inserter_stack_size_bonus",
-        setting_type = "startup",
+        setting_type = "runtime-global",
         default_value = 25,
         minimum_value = 1,
         maximum_value = 254,
@@ -17,24 +35,13 @@ function __settings_startup__data_raw_inserter(data, order)
       {
         type = "double-setting",
         name = settings_key_prefix .. "stack_inserter_capacity_bonus",
-        setting_type = "startup",
+        setting_type = "runtime-global",
         default_value = 100,
         minimum_value = 1,
         maximum_value = 254,
         localised_name = "Inserters Stack Capacity Bonus",
         localised_description = "Stack Inserter capacity bonus research increases the stack size for inserters, i.e. the number of items they can hold in the arm at once",
         order = tonumber(order .. "2")
-      },
-      {
-        type = "int-setting",
-        name = settings_key_prefix .. "inserter_speed",
-        setting_type = "startup",
-        default_value = 100,
-        maximum_value = 100000,
-        minimum_value = 1,
-        localised_name = "Inserter Rotation Speed",
-        localised_description = "1% Slower - 100% Normal - 100000% Faster",
-        order = tonumber(order .. "3")
       }
     }
   )
@@ -66,10 +73,10 @@ function __on_runtime_mod_setting_changed__data_raw_inserter(event)
       --
 
       -- inserter_stack_size_bonus
-      player.force.inserter_stack_size_bonus = settings.startup[settings_key_prefix .. "inserter_stack_size_bonus"].value
+      player.force.inserter_stack_size_bonus = settings.global[settings_key_prefix .. "inserter_stack_size_bonus"].value
 
       -- stack_inserter_capacity_bonus
-      player.force.stack_inserter_capacity_bonus = (settings.startup[settings_key_prefix .. "stack_inserter_capacity_bonus"].value or 1)
+      player.force.stack_inserter_capacity_bonus = settings.global[settings_key_prefix .. "stack_inserter_capacity_bonus"].value
 
     --
     end

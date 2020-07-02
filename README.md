@@ -18,7 +18,7 @@ Quality of Life Improvements
 
 * Electric Pole Coverage - Supply Area and Wire distance
 * Container Inventory Size
-* Inserter Speed
+* Inserter Stack Size and Speed
 * Lab Research Speed and Productivity
 * Furnace Crafting Speed and Productivity
 * Mining Drill Mining Speed and Productivity

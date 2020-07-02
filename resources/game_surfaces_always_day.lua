@@ -24,6 +24,8 @@ function __on_player_created__game_surfaces_always_day(event)
   --
 
   __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
+
+  --
 end
 
 function __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
@@ -36,4 +38,6 @@ function __on_runtime_mod_setting_changed__game_surfaces_always_day(event)
   if settings.global[settings_key_prefix .. "mode"].value == "enabled" then
     game.surfaces[1].always_day = true
   end
+
+  --
 end

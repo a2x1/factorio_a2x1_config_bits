@@ -1,5 +1,5 @@
 Quality of Life improvements - Always day, Infinite Zoom, Support for for Lazy Bastard Achievement,
 Manual Crafting Speed Boost, Running and Mining Speed, Reach Distance,
 Electric Pole Coverage - Supply Area and Wire distance,
-Container Inventory Size, Inserter Speed, Lab Research Speed and Productivity,
+Container Inventory Size, Inserter Stack Size and Speed, Lab Research Speed and Productivity,
 Furnace, Mining Drill, Assembling Machine Crafting Speed and Productivity

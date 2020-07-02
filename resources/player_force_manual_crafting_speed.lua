@@ -68,8 +68,7 @@ function manual_crafting_enabled(event)
     group.set_allows_action(defines.input_action.craft, true)
   end
 
-  game.players[event.player_index].force.manual_crafting_speed_modifier = tonumber(string.sub(settings.global[settings_key_prefix .. "modifier"]["value"], 1, -2)) - 1
-  -- player.print("Changed: player.force.manual_crafting_speed_modifier = " .. settings_value_number)
+  game.players[event.player_index].force.manual_crafting_speed_modifier = tonumber(string.sub(settings.global[settings_key_prefix .. "modifier"].value, 1, -2)) - 1
   -- http://lua-api.factorio.com/latest/LuaForce.html#LuaForce.manual_crafting_speed_modifier
   -- The actual crafting speed will be multiplied by 1 + manual_crafting_speed_modifier.
 end
