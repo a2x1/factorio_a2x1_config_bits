@@ -65,11 +65,11 @@ function __on_runtime_mod_setting_changed__data_raw_inserter(event)
     if player.character then
       --
 
-      -- stack_inserter_capacity_bonus
-      player.force.stack_inserter_capacity_bonus = settings.global[settings_key_prefix .. "stack_inserter_capacity_bonus"].value
-
       -- inserter_stack_size_bonus
-      player.force.inserter_stack_size_bonus = settings.global[settings_key_prefix .. "inserter_stack_size_bonus"].value
+      player.force.inserter_stack_size_bonus = settings.startup[settings_key_prefix .. "inserter_stack_size_bonus"].value
+
+      -- stack_inserter_capacity_bonus
+      player.force.stack_inserter_capacity_bonus = (settings.startup[settings_key_prefix .. "stack_inserter_capacity_bonus"].value or 1)
 
     --
     end
