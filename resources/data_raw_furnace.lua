@@ -5,6 +5,17 @@ function __settings_startup__data_raw_furnace(data, order)
     {
       {
         type = "int-setting",
+        name = settings_key_prefix .. "crafting_speed",
+        setting_type = "startup",
+        default_value = 1000,
+        maximum_value = 100000,
+        minimum_value = 1,
+        localised_name = "Furnace Crafting Speed",
+        localised_description = "1% Slower - 100% Normal - 100000% Faster",
+        order = tonumber(order .. "1")
+      },
+      {
+        type = "int-setting",
         name = settings_key_prefix .. "base_productivity",
         setting_type = "startup",
         default_value = 200,
@@ -12,17 +23,6 @@ function __settings_startup__data_raw_furnace(data, order)
         minimum_value = 0,
         localised_name = "Furnace Productivity",
         localised_description = "0% Normal - 100% More - 100000% Even More",
-        order = tonumber(order .. "1")
-      },
-      {
-        type = "int-setting",
-        name = settings_key_prefix .. "crafting_speed",
-        setting_type = "startup",
-        default_value = 700,
-        maximum_value = 100000,
-        minimum_value = 1,
-        localised_name = "Furnace Crafting Speed",
-        localised_description = "1% Slower - 100% Normal - 100000% Faster",
         order = tonumber(order .. "2")
       }
     }

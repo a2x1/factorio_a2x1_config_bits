@@ -16,11 +16,11 @@ require "resources/player_force_manual_crafting_speed"
 __settings_startup__data_raw_electric_pole(data, 1)
 __settings_startup__data_raw_container(data, 2)
 __settings_startup__data_raw_inserter(data, 3)
-__settings_startup__data_raw_lab(data, 4)
 
+__settings_startup__data_raw_assembling_machine(data, 4)
 __settings_startup__data_raw_furnace(data, 5)
 __settings_startup__data_raw_mining(data, 6)
-__settings_startup__data_raw_assembling_machine(data, 7)
+__settings_startup__data_raw_lab(data, 7)
 
 
 __settings_global__game_surfaces_always_day(data, 1)

@@ -1,6 +1,8 @@
 require "resources/game_players_zoom"
 require "resources/game_surfaces_always_day"
 
+require "resources/data_raw_inserter"
+
 require "resources/player_character"
 require "resources/player_force"
 require "resources/player_force_manual_crafting_speed"
@@ -16,6 +18,7 @@ script.on_event(
     __on_player_created__player_force_manual_crafting_speed(event)
     __on_player_created__player_force(event)
     __on_player_created__player_character(event)
+    __on_player_created__data_raw_inserter(event)
 
     --
   end
@@ -30,6 +33,7 @@ script.on_event(
     __on_runtime_mod_setting_changed__player_force_manual_crafting_speed(event)
     __on_runtime_mod_setting_changed__player_force(event)
     __on_runtime_mod_setting_changed__player_character(event)
+    __on_runtime_mod_setting_changed__data_raw_inserter(event)
 
     --
   end
