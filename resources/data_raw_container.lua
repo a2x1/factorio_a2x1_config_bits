@@ -7,7 +7,7 @@ function __settings_startup__data_raw_container(data, order)
         type = "int-setting",
         name = settings_key_prefix .. "inventory_size",
         setting_type = "startup",
-        default_value = 200,
+        default_value = 500,
         maximum_value = 100000,
         minimum_value = 1,
         localised_name = "Container Inventory Size",

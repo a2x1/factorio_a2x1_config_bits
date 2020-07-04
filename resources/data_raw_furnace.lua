@@ -18,7 +18,7 @@ function __settings_startup__data_raw_furnace(data, order)
         type = "int-setting",
         name = settings_key_prefix .. "base_productivity",
         setting_type = "startup",
-        default_value = 200,
+        default_value = 0,
         maximum_value = 100000,
         minimum_value = 0,
         localised_name = "Furnace Productivity",

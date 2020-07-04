@@ -7,7 +7,7 @@ function __settings_startup__data_raw_lab(data, order)
         type = "int-setting",
         name = settings_key_prefix .. "researching_speed",
         setting_type = "startup",
-        default_value = 1000,
+        default_value = 5000,
         maximum_value = 100000,
         minimum_value = 1,
         localised_name = "Laboratory Research Speed",
