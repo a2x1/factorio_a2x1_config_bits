@@ -7,7 +7,7 @@ function __settings_startup__data_raw_mining(data, order)
         type = "int-setting",
         name = settings_key_prefix .. "mining_speed",
         setting_type = "startup",
-        default_value = 1000,
+        default_value = 100,
         maximum_value = 100000,
         minimum_value = 1,
         localised_name = "Mining Drill Mining Speed",
